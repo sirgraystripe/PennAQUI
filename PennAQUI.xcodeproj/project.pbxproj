@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		D75C93722BF964B40036F4DC /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C93712BF964B40036F4DC /* NetworkError.swift */; };
 		D75C93742BF964BF0036F4DC /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C93732BF964BF0036F4DC /* Endpoint.swift */; };
-		D75C93792BF96E8D0036F4DC /* EmptyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C93782BF96E8D0036F4DC /* EmptyModels.swift */; };
+		D75C93792BF96E8D0036F4DC /* EmptyBacked.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C93782BF96E8D0036F4DC /* EmptyBacked.swift */; };
 		D75C937C2BF96F4E0036F4DC /* FeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C937B2BF96F4E0036F4DC /* FeedData.swift */; };
 		D75C937E2BF96F570036F4DC /* CityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C937D2BF96F570036F4DC /* CityData.swift */; };
 		D75C93802BF96F680036F4DC /* StationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C937F2BF96F680036F4DC /* StationInfo.swift */; };
 		D75C93822BF96F6F0036F4DC /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C93812BF96F6F0036F4DC /* City.swift */; };
 		D75C93842BF971230036F4DC /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C93832BF971230036F4DC /* Logger.swift */; };
+		D75C93882BF9732B0036F4DC /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C93872BF9732B0036F4DC /* NetworkEngine.swift */; };
+		D75C938A2BF9733E0036F4DC /* NetworkServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C93892BF9733E0036F4DC /* NetworkServiceMock.swift */; };
 		D7AA54AB2BF9544400ABB99C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7AA54AA2BF9544400ABB99C /* Assets.xcassets */; };
 		D7AA54AE2BF9544400ABB99C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7AA54AD2BF9544400ABB99C /* Preview Assets.xcassets */; };
 		D7AA54C22BF954B500ABB99C /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54B42BF954B500ABB99C /* InitialView.swift */; };
@@ -32,12 +34,14 @@
 		D75C93712BF964B40036F4DC /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		D75C93732BF964BF0036F4DC /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		D75C93752BF96AEB0036F4DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		D75C93782BF96E8D0036F4DC /* EmptyModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyModels.swift; sourceTree = "<group>"; };
+		D75C93782BF96E8D0036F4DC /* EmptyBacked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBacked.swift; sourceTree = "<group>"; };
 		D75C937B2BF96F4E0036F4DC /* FeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedData.swift; sourceTree = "<group>"; };
 		D75C937D2BF96F570036F4DC /* CityData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityData.swift; sourceTree = "<group>"; };
 		D75C937F2BF96F680036F4DC /* StationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationInfo.swift; sourceTree = "<group>"; };
 		D75C93812BF96F6F0036F4DC /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		D75C93832BF971230036F4DC /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		D75C93872BF9732B0036F4DC /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
+		D75C93892BF9733E0036F4DC /* NetworkServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceMock.swift; sourceTree = "<group>"; };
 		D7AA54A32BF9544400ABB99C /* PennAQUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PennAQUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7AA54AA2BF9544400ABB99C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7AA54AD2BF9544400ABB99C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -92,6 +96,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		D75C93852BF973220036F4DC /* Real */ = {
+			isa = PBXGroup;
+			children = (
+				D75C93872BF9732B0036F4DC /* NetworkEngine.swift */,
+			);
+			path = Real;
+			sourceTree = "<group>";
+		};
+		D75C93862BF973250036F4DC /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				D75C93892BF9733E0036F4DC /* NetworkServiceMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		D7AA549A2BF9544400ABB99C = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				D7AA54C92BF955A100ABB99C /* KeysConfig.xcconfig */,
+				D75C93862BF973250036F4DC /* Mock */,
+				D75C93852BF973220036F4DC /* Real */,
 				D75C93762BF96E3C0036F4DC /* Networking */,
 			);
 			path = Service;
@@ -195,9 +217,9 @@
 		D7AA54CC2BF9565100ABB99C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D75C93782BF96E8D0036F4DC /* EmptyBacked.swift */,
 				D75C937A2BF96F480036F4DC /* Models */,
 				D75C93772BF96E7B0036F4DC /* DTOs */,
-				D75C93782BF96E8D0036F4DC /* EmptyModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,6 +301,7 @@
 				D7AA54C82BF954B500ABB99C /* EnvironmentValues+Extensions.swift in Sources */,
 				D7AA54C22BF954B500ABB99C /* InitialView.swift in Sources */,
 				D7AA54C32BF954B500ABB99C /* NetworkService.swift in Sources */,
+				D75C93882BF9732B0036F4DC /* NetworkEngine.swift in Sources */,
 				D7AA54C62BF954B500ABB99C /* RootView.swift in Sources */,
 				D75C93842BF971230036F4DC /* Logger.swift in Sources */,
 				D7AA54C72BF954B500ABB99C /* Collection+Extensions.swift in Sources */,
@@ -286,9 +309,10 @@
 				D7AA54CE2BF9565B00ABB99C /* FeedDTO.swift in Sources */,
 				D75C93802BF96F680036F4DC /* StationInfo.swift in Sources */,
 				D75C93722BF964B40036F4DC /* NetworkError.swift in Sources */,
+				D75C938A2BF9733E0036F4DC /* NetworkServiceMock.swift in Sources */,
 				D75C93742BF964BF0036F4DC /* Endpoint.swift in Sources */,
 				D75C93822BF96F6F0036F4DC /* City.swift in Sources */,
-				D75C93792BF96E8D0036F4DC /* EmptyModels.swift in Sources */,
+				D75C93792BF96E8D0036F4DC /* EmptyBacked.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
