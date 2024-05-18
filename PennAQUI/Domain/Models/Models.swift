@@ -17,7 +17,7 @@ struct FeedData: Codable {
     var cityStationID: Int?
     var airQualityIndex: Int?
     var time: Date?
-    var city: City?
+    var cityData: CityData?
     var stationInfo: [StationInfo]?
 
     init(feedDTO dto: FeedDTO) {
@@ -47,7 +47,7 @@ struct FeedData: Codable {
         }
 
         if let cityDTO = data.city {
-            city = City(cityDTO: cityDTO)
+            cityData = CityData(cityDTO: cityDTO)
         }
 
         if let attributionsDTOs = data.attributions {
@@ -56,7 +56,9 @@ struct FeedData: Codable {
     }
 }
 
-struct City: Codable {
+/// Represents city data returned from the API.
+/// Contrast this to `City`, which is meant for input.
+struct CityData: Codable {
     var name: String?
     var lat: Int?
     var long: Int?
@@ -94,4 +96,11 @@ struct StationInfo: Codable {
             logoURL = url
         }
     }
+}
+
+enum City: Codable {
+    /// e.g., `beijing`
+    case name(String)
+    /// e.g., `@7843`
+    case id(String)
 }
