@@ -1,5 +1,5 @@
 //
-//  Service.swift
+//  NetworkService.swift
 //  PennAQUI
 //
 //  Created by Peter Kos on 5/18/24.
@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol Service {
+protocol NetworkService {
     func getFeed(forCity city: City) async -> Result<FeedData, NetworkError>
 }
 
-class ServiceEngine: Service {
+class ServiceEngine: NetworkService {
     func getFeed(forCity city: City) async -> Result<FeedData, NetworkError> {
         let result = await performRequest(to: Endpoint.feed(city: city))
 

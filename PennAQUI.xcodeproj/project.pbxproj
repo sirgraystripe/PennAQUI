@@ -9,10 +9,16 @@
 /* Begin PBXBuildFile section */
 		D75C93722BF964B40036F4DC /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C93712BF964B40036F4DC /* NetworkError.swift */; };
 		D75C93742BF964BF0036F4DC /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C93732BF964BF0036F4DC /* Endpoint.swift */; };
+		D75C93792BF96E8D0036F4DC /* EmptyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C93782BF96E8D0036F4DC /* EmptyModels.swift */; };
+		D75C937C2BF96F4E0036F4DC /* FeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C937B2BF96F4E0036F4DC /* FeedData.swift */; };
+		D75C937E2BF96F570036F4DC /* CityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C937D2BF96F570036F4DC /* CityData.swift */; };
+		D75C93802BF96F680036F4DC /* StationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C937F2BF96F680036F4DC /* StationInfo.swift */; };
+		D75C93822BF96F6F0036F4DC /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C93812BF96F6F0036F4DC /* City.swift */; };
+		D75C93842BF971230036F4DC /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C93832BF971230036F4DC /* Logger.swift */; };
 		D7AA54AB2BF9544400ABB99C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7AA54AA2BF9544400ABB99C /* Assets.xcassets */; };
 		D7AA54AE2BF9544400ABB99C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7AA54AD2BF9544400ABB99C /* Preview Assets.xcassets */; };
 		D7AA54C22BF954B500ABB99C /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54B42BF954B500ABB99C /* InitialView.swift */; };
-		D7AA54C32BF954B500ABB99C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54B62BF954B500ABB99C /* Service.swift */; };
+		D7AA54C32BF954B500ABB99C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54B62BF954B500ABB99C /* NetworkService.swift */; };
 		D7AA54C42BF954B500ABB99C /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54B82BF954B500ABB99C /* Store.swift */; };
 		D7AA54C52BF954B500ABB99C /* NewProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54BB2BF954B500ABB99C /* NewProjectApp.swift */; };
 		D7AA54C62BF954B500ABB99C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54BC2BF954B500ABB99C /* RootView.swift */; };
@@ -20,18 +26,23 @@
 		D7AA54C82BF954B500ABB99C /* EnvironmentValues+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54BF2BF954B500ABB99C /* EnvironmentValues+Extensions.swift */; };
 		D7AA54CA2BF955A400ABB99C /* KeysConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D7AA54C92BF955A100ABB99C /* KeysConfig.xcconfig */; };
 		D7AA54CE2BF9565B00ABB99C /* FeedDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54CD2BF9565B00ABB99C /* FeedDTO.swift */; };
-		D7AA54D02BF95A4000ABB99C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54CF2BF95A4000ABB99C /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D75C93712BF964B40036F4DC /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		D75C93732BF964BF0036F4DC /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		D75C93752BF96AEB0036F4DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D75C93782BF96E8D0036F4DC /* EmptyModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyModels.swift; sourceTree = "<group>"; };
+		D75C937B2BF96F4E0036F4DC /* FeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedData.swift; sourceTree = "<group>"; };
+		D75C937D2BF96F570036F4DC /* CityData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityData.swift; sourceTree = "<group>"; };
+		D75C937F2BF96F680036F4DC /* StationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationInfo.swift; sourceTree = "<group>"; };
+		D75C93812BF96F6F0036F4DC /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		D75C93832BF971230036F4DC /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		D7AA54A32BF9544400ABB99C /* PennAQUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PennAQUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7AA54AA2BF9544400ABB99C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7AA54AD2BF9544400ABB99C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D7AA54B42BF954B500ABB99C /* InitialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
-		D7AA54B62BF954B500ABB99C /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		D7AA54B62BF954B500ABB99C /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D7AA54B82BF954B500ABB99C /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		D7AA54BB2BF954B500ABB99C /* NewProjectApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectApp.swift; sourceTree = "<group>"; };
 		D7AA54BC2BF954B500ABB99C /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -39,7 +50,6 @@
 		D7AA54BF2BF954B500ABB99C /* EnvironmentValues+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+Extensions.swift"; sourceTree = "<group>"; };
 		D7AA54C92BF955A100ABB99C /* KeysConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = KeysConfig.xcconfig; sourceTree = "<group>"; };
 		D7AA54CD2BF9565B00ABB99C /* FeedDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDTO.swift; sourceTree = "<group>"; };
-		D7AA54CF2BF95A4000ABB99C /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +63,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D75C93762BF96E3C0036F4DC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D7AA54B62BF954B500ABB99C /* NetworkService.swift */,
+				D75C93712BF964B40036F4DC /* NetworkError.swift */,
+				D75C93732BF964BF0036F4DC /* Endpoint.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D75C93772BF96E7B0036F4DC /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				D7AA54CD2BF9565B00ABB99C /* FeedDTO.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		D75C937A2BF96F480036F4DC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D75C937D2BF96F570036F4DC /* CityData.swift */,
+				D75C937B2BF96F4E0036F4DC /* FeedData.swift */,
+				D75C937F2BF96F680036F4DC /* StationInfo.swift */,
+				D75C93812BF96F6F0036F4DC /* City.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		D7AA549A2BF9544400ABB99C = {
 			isa = PBXGroup;
 			children = (
@@ -102,10 +141,8 @@
 		D7AA54B72BF954B500ABB99C /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				D7AA54B62BF954B500ABB99C /* Service.swift */,
 				D7AA54C92BF955A100ABB99C /* KeysConfig.xcconfig */,
-				D75C93712BF964B40036F4DC /* NetworkError.swift */,
-				D75C93732BF964BF0036F4DC /* Endpoint.swift */,
+				D75C93762BF96E3C0036F4DC /* Networking */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -121,9 +158,9 @@
 		D7AA54BA2BF954B500ABB99C /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D7AA54B92BF954B500ABB99C /* Store */,
 				D7AA54CC2BF9565100ABB99C /* Models */,
 				D7AA54B72BF954B500ABB99C /* Service */,
-				D7AA54B92BF954B500ABB99C /* Store */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -150,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				D7AA54C02BF954B500ABB99C /* Extensions */,
+				D75C93832BF971230036F4DC /* Logger.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -157,8 +195,9 @@
 		D7AA54CC2BF9565100ABB99C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D7AA54CF2BF95A4000ABB99C /* Models.swift */,
-				D7AA54CD2BF9565B00ABB99C /* FeedDTO.swift */,
+				D75C937A2BF96F480036F4DC /* Models */,
+				D75C93772BF96E7B0036F4DC /* DTOs */,
+				D75C93782BF96E8D0036F4DC /* EmptyModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,17 +273,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D75C937C2BF96F4E0036F4DC /* FeedData.swift in Sources */,
+				D75C937E2BF96F570036F4DC /* CityData.swift in Sources */,
 				D7AA54C42BF954B500ABB99C /* Store.swift in Sources */,
 				D7AA54C82BF954B500ABB99C /* EnvironmentValues+Extensions.swift in Sources */,
 				D7AA54C22BF954B500ABB99C /* InitialView.swift in Sources */,
-				D7AA54C32BF954B500ABB99C /* Service.swift in Sources */,
+				D7AA54C32BF954B500ABB99C /* NetworkService.swift in Sources */,
 				D7AA54C62BF954B500ABB99C /* RootView.swift in Sources */,
+				D75C93842BF971230036F4DC /* Logger.swift in Sources */,
 				D7AA54C72BF954B500ABB99C /* Collection+Extensions.swift in Sources */,
-				D7AA54D02BF95A4000ABB99C /* Models.swift in Sources */,
 				D7AA54C52BF954B500ABB99C /* NewProjectApp.swift in Sources */,
 				D7AA54CE2BF9565B00ABB99C /* FeedDTO.swift in Sources */,
+				D75C93802BF96F680036F4DC /* StationInfo.swift in Sources */,
 				D75C93722BF964B40036F4DC /* NetworkError.swift in Sources */,
 				D75C93742BF964BF0036F4DC /* Endpoint.swift in Sources */,
+				D75C93822BF96F6F0036F4DC /* City.swift in Sources */,
+				D75C93792BF96E8D0036F4DC /* EmptyModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
