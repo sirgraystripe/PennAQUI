@@ -1,0 +1,11 @@
+//
+//  KeysConfig.xcconfig
+//  PennAQUI
+//
+//  Created by Peter Kos on 5/18/24.
+//
+
+AQI_API_TOKEN = 8BADF00D
+
+// Create a `Keys.xcconfig` alongside this with the correct API key defined.
+#include? "Keys.xcconfig"

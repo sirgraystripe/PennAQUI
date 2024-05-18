@@ -16,6 +16,7 @@
 		D7AA54C62BF954B500ABB99C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54BC2BF954B500ABB99C /* RootView.swift */; };
 		D7AA54C72BF954B500ABB99C /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54BE2BF954B500ABB99C /* Collection+Extensions.swift */; };
 		D7AA54C82BF954B500ABB99C /* EnvironmentValues+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54BF2BF954B500ABB99C /* EnvironmentValues+Extensions.swift */; };
+		D7AA54CA2BF955A400ABB99C /* KeysConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D7AA54C92BF955A100ABB99C /* KeysConfig.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		D7AA54BC2BF954B500ABB99C /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		D7AA54BE2BF954B500ABB99C /* Collection+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		D7AA54BF2BF954B500ABB99C /* EnvironmentValues+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+Extensions.swift"; sourceTree = "<group>"; };
+		D7AA54C92BF955A100ABB99C /* KeysConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = KeysConfig.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				D7AA54B62BF954B500ABB99C /* Service.swift */,
+				D7AA54C92BF955A100ABB99C /* KeysConfig.xcconfig */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			files = (
 				D7AA54AE2BF9544400ABB99C /* Preview Assets.xcassets in Resources */,
 				D7AA54AB2BF9544400ABB99C /* Assets.xcassets in Resources */,
+				D7AA54CA2BF955A400ABB99C /* KeysConfig.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +227,7 @@
 /* Begin XCBuildConfiguration section */
 		D7AA54AF2BF9544400ABB99C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7AA54C92BF955A100ABB99C /* KeysConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -286,6 +291,7 @@
 		};
 		D7AA54B02BF9544400ABB99C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7AA54C92BF955A100ABB99C /* KeysConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -342,6 +348,7 @@
 		};
 		D7AA54B22BF9544400ABB99C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7AA54C92BF955A100ABB99C /* KeysConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -371,6 +378,7 @@
 		};
 		D7AA54B32BF9544400ABB99C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7AA54C92BF955A100ABB99C /* KeysConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
