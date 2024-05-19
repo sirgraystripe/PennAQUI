@@ -45,16 +45,17 @@ struct InitialView: View {
                 }
                 .padding(.top, Theme.constants.size50)
                 GridRow {
-                    if store.activeFeed.isDerivedFromCurrentLocation {
+                    switch store.activeFeed.feedCategory {
+                    case .city:
+                        DetailCell(title: "CITY") {
+                            Text(store.activeFeed.cityData?.name ?? "Unknown")
+                        }
+                    case .user:
                         HStack(alignment: .top) {
                             DetailCell(title: "CURRENT LAT / LONG") {
                                 Text("\(store.activeFeed.cityData?.lat ?? 0.0)")
                                 Text("\(store.activeFeed.cityData?.long ?? 0.0)")
                             }
-                        }
-                    } else {
-                        DetailCell(title: "CITY") {
-                            Text(store.activeFeed.cityData?.name ?? "Unknown")
                         }
                     }
                 }

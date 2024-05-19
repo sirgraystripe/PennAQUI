@@ -19,14 +19,15 @@ struct FeedData: Codable {
     var time: Date?
     var cityData: CityData?
     var stationInfo: StationInfo?
-    var isDerivedFromCurrentLocation: Bool = false
+    var feedCategory: FeedCategory
 }
 
 extension FeedData {
-    init(feedDTO dto: FeedDTO) {
+    init(feedDTO dto: FeedDTO, category feedCategory: FeedCategory) {
         if let status = dto.status {
             self.status = .init(rawValue: status)
         }
+        self.feedCategory = feedCategory
 
         guard let data = dto.data else {
             return

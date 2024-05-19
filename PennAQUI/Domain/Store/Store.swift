@@ -11,11 +11,6 @@ import OSLog
 class Store: ObservableObject {
     // MARK: Data
 
-    enum FeedCategory {
-        case city
-        case user
-    }
-
     @Published var feedData = [FeedCategory: FeedData]()
     @Published var activeFeed: FeedData = .empty()
 
@@ -32,6 +27,7 @@ class Store: ObservableObject {
         case let .success(feedData):
             Task { @MainActor in
                 self.feedData[.user] = feedData
+                self.setActiveFeed(.user)
                 AQILogger.Network.info("Successfully got user feed data: \(String(describing: feedData))")
             }
         case let .failure(networkError):
@@ -41,6 +37,14 @@ class Store: ObservableObject {
 
     func addCityFeed(_ feed: FeedData) {
         feedData[.city] = feed
+    }
+
+    func setActiveFeed(_ feedCategory: FeedCategory) {
+        guard let feedData = feedData[feedCategory] else {
+            AQILogger.UI.error("Attempt to switch to \(feedCategory.rawValue), but its data does not exist.")
+            return
+        }
+        activeFeed = feedData
     }
 }
 

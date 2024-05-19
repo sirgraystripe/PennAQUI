@@ -9,8 +9,7 @@ import SwiftUI
 
 struct AddCitySheet: View {
     @EnvironmentObject private var store: Store
-
-    var onSubmit: () -> Void
+    @Environment(\.dismiss) private var dismiss
 
     @State private var searchQuery = ""
     @State private var feedResult: FeedData?
@@ -27,6 +26,7 @@ struct AddCitySheet: View {
                 Button("Add \(cityName)") {
                     if let feedResult {
                         store.addCityFeed(feedResult)
+                        dismiss()
                     } else {
                         AQILogger.UI.error("User attempted nil city add. Is the add button disabled correctly?")
                     }
@@ -42,7 +42,7 @@ struct AddCitySheet: View {
             placement: .toolbar,
             prompt: "Seattle..."
         )
-        .onSubmit {
+        .onSubmit(of: .search) {
             Task {
                 // TODO: Support ID search
                 await fetchCity(.name(searchQuery))
@@ -50,8 +50,8 @@ struct AddCitySheet: View {
         }
     }
 
-    func fetchCity(_: CityInput) async {
-        let result = await store.service.getFeed(forCity: .name(searchQuery))
+    func fetchCity(_ city: CityInput) async {
+        let result = await store.service.getFeed(forCity: city)
 
         switch result {
         case let .success(success):

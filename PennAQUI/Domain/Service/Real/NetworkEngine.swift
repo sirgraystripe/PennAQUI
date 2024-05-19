@@ -26,7 +26,7 @@ class NetworkEngine: NetworkService {
             return .failure(.jsonParseError(error.localizedDescription))
         }
 
-        return .success(FeedData(feedDTO: feedDTO))
+        return .success(FeedData(feedDTO: feedDTO, category: .city))
     }
 
     func getFeed(forUser _: UserCoordinates) async -> Result<FeedData, NetworkError> {

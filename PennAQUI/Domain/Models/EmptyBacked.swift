@@ -26,7 +26,8 @@ extension FeedData: EmptyBacked {
             airQualityIndex: nil,
             time: nil,
             cityData: .empty(),
-            stationInfo: nil
+            stationInfo: nil,
+            feedCategory: .city
         )
     }
 }

@@ -28,7 +28,7 @@ struct NetworkServiceMock: NetworkService {
                     name: "Mordor Meteorology",
                     logoURL: nil
                 ),
-                isDerivedFromCurrentLocation: false
+                feedCategory: .city
             )
         )
     }
@@ -49,7 +49,7 @@ struct NetworkServiceMock: NetworkService {
                     name: "Mordor Meteorology",
                     logoURL: nil
                 ),
-                isDerivedFromCurrentLocation: true
+                feedCategory: .user
             )
         )
     }
