@@ -11,6 +11,7 @@ import OSLog
 class AQILogger {
     private enum Subsystem: String, CustomStringConvertible {
         case networking
+        case ui
 
         var description: String {
             rawValue.capitalized
@@ -19,5 +20,9 @@ class AQILogger {
 
     static var Network: Logger {
         Logger(subsystem: Subsystem.networking.description, category: "")
+    }
+
+    static var UI: Logger {
+        Logger(subsystem: Subsystem.ui.description, category: "")
     }
 }

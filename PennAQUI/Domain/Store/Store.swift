@@ -11,7 +11,13 @@ import OSLog
 class Store: ObservableObject {
     // MARK: Data
 
-    @Published var feedData: FeedData = .empty()
+    enum FeedCategory {
+        case city
+        case user
+    }
+
+    @Published var feedData = [FeedCategory: FeedData]()
+    @Published var activeFeed: FeedData = .empty()
 
     // MARK: Utilities
 
@@ -21,16 +27,20 @@ class Store: ObservableObject {
         self.service = service
     }
 
-    func load(city: City) async {
-        switch await service.getFeed(forCity: city) {
+    func loadUserFeed() async {
+        switch await service.getFeed(forUser: .init(latitude: 0, longitude: 0)) {
         case let .success(feedData):
             Task { @MainActor in
-                self.feedData = feedData
-                AQILogger.Network.info("Successfully got feed data: \(String(describing: feedData))")
+                self.feedData[.user] = feedData
+                AQILogger.Network.info("Successfully got user feed data: \(String(describing: feedData))")
             }
         case let .failure(networkError):
             AQILogger.Network.error("\(networkError.localizedDescription)")
         }
+    }
+
+    func addCityFeed(_ feed: FeedData) {
+        feedData[.city] = feed
     }
 }
 

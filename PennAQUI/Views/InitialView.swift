@@ -13,14 +13,14 @@ struct InitialView: View {
 
     var body: some View {
         HStack(spacing: 20) {
-            QualityRange(value: $store.feedData.airQualityIndex)
+            QualityRange(value: $store.activeFeed.airQualityIndex)
                 .frame(maxWidth: 50)
             Grid(alignment: .leading) {
                 GridRow {
                     HStack(alignment: .top) {
                         DetailCell(title: "AQI") {
                             // capHeight is not 100%, but good for reducing baseline
-                            Text("\(store.feedData.airQualityIndex ?? 0)")
+                            Text("\(store.activeFeed.airQualityIndex ?? 0)")
                                 .font(Theme.fonts.gigantic)
                                 .frame(height: Theme.fonts.giganticUIFont.capHeight)
                         }
@@ -30,14 +30,14 @@ struct InitialView: View {
                                 title: "Yesterday",
                                 systemImage: "arrow.left.circle.fill"
                             ) {
-                                Text("\(store.feedData.airQualityIndex ?? 0)")
+                                Text("\(store.activeFeed.airQualityIndex ?? 0)")
                                     .font(Theme.fonts.body)
                             }
                             DetailCell(
                                 title: "Tomorrow",
                                 systemImage: "arrow.right.circle.fill"
                             ) {
-                                Text("\(store.feedData.airQualityIndex ?? 0)")
+                                Text("\(store.activeFeed.airQualityIndex ?? 0)")
                                     .font(Theme.fonts.body)
                             }
                         }
@@ -45,22 +45,22 @@ struct InitialView: View {
                 }
                 .padding(.top, Theme.constants.size50)
                 GridRow {
-                    if store.feedData.isDerivedFromCurrentLocation {
+                    if store.activeFeed.isDerivedFromCurrentLocation {
                         HStack(alignment: .top) {
                             DetailCell(title: "CURRENT LAT / LONG") {
-                                Text("\(store.feedData.cityData?.lat ?? 0.0)")
-                                Text("\(store.feedData.cityData?.long ?? 0.0)")
+                                Text("\(store.activeFeed.cityData?.lat ?? 0.0)")
+                                Text("\(store.activeFeed.cityData?.long ?? 0.0)")
                             }
                         }
                     } else {
                         DetailCell(title: "CITY") {
-                            Text(store.feedData.cityData?.name ?? "Unknown")
+                            Text(store.activeFeed.cityData?.name ?? "Unknown")
                         }
                     }
                 }
                 GridRow {
                     DetailCell(title: "STATION") {
-                        Text(store.feedData.stationInfo?.name ?? "")
+                        Text(store.activeFeed.stationInfo?.name ?? "")
                     }
                     .disabled(true)
                 }
@@ -73,7 +73,7 @@ struct InitialView: View {
         .padding(.horizontal, 30)
         .onAppear {
             Task {
-                await store.load(city: .name("hi"))
+                await store.loadUserFeed()
             }
         }
     }

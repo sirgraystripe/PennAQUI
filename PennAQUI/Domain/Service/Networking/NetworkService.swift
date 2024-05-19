@@ -8,5 +8,6 @@
 import Foundation
 
 protocol NetworkService {
-    func getFeed(forCity city: City) async -> Result<FeedData, NetworkError>
+    func getFeed(forCity city: CityInput) async -> Result<FeedData, NetworkError>
+    func getFeed(forUser user: UserCoordinates) async -> Result<FeedData, NetworkError>
 }

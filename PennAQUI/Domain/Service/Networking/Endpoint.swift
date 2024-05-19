@@ -22,7 +22,7 @@ enum Endpoint {
         }
     }
 
-    static func feed(city: City) -> EndpointResult {
+    static func feed(city: CityInput) -> EndpointResult {
         guard var base = try? base.get() else {
             return .failure(.invalidURL)
         }

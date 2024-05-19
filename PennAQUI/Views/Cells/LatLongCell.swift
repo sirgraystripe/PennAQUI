@@ -14,9 +14,9 @@ struct LatLongCell: View {
         VStack(alignment: .leading) {
             Text("LAT/LONG")
                 .font(Theme.fonts.body)
-            Text("\(store.feedData.cityData?.lat ?? 0.0)")
+            Text("\(store.activeFeed.cityData?.lat ?? 0.0)")
                 .font(Theme.fonts.title)
-            Text("\(store.feedData.cityData?.long ?? 0.0)")
+            Text("\(store.activeFeed.cityData?.long ?? 0.0)")
                 .font(Theme.fonts.title)
         }
         .cellBackground()

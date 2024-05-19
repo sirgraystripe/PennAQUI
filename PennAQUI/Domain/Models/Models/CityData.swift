@@ -8,7 +8,7 @@
 import Foundation
 
 /// Represents city data returned from the API.
-/// Contrast this to `City`, which is meant for input.
+/// Contrast this to `CityInput`, which is meant for input.
 struct CityData: Codable {
     var name: String?
     var lat: Double?

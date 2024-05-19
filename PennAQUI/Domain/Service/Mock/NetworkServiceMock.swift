@@ -10,7 +10,7 @@ import Foundation
 // TODO: Add mock scenarios
 
 struct NetworkServiceMock: NetworkService {
-    func getFeed(forCity _: City) async -> Result<FeedData, NetworkError> {
+    func getFeed(forCity city: CityInput) async -> Result<FeedData, NetworkError> {
         .success(
             FeedData(
                 status: .ok,
@@ -18,14 +18,35 @@ struct NetworkServiceMock: NetworkService {
                 airQualityIndex: 24,
                 time: .now,
                 cityData: CityData(
-                    name: "The Shire",
+                    name: city.description,
                     lat: 20.2811,
                     long: 24.9382,
                     logoURL: nil
                 ),
                 stationInfo: StationInfo(
                     url: nil,
-                    name: "Mordor Meterology",
+                    name: "Mordor Meteorology",
+                    logoURL: nil
+                ),
+                isDerivedFromCurrentLocation: false
+            )
+        )
+    }
+
+    func getFeed(forUser user: UserCoordinates) async -> Result<FeedData, NetworkError> {
+        .success(
+            FeedData(
+                status: .ok,
+                cityStationID: 12,
+                airQualityIndex: 24,
+                time: .now,
+                cityData: CityData(
+                    lat: user.latitude,
+                    long: user.longitude
+                ),
+                stationInfo: StationInfo(
+                    url: nil,
+                    name: "Mordor Meteorology",
                     logoURL: nil
                 ),
                 isDerivedFromCurrentLocation: true

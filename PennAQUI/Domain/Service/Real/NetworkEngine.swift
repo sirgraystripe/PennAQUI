@@ -8,7 +8,7 @@
 import Foundation
 
 class NetworkEngine: NetworkService {
-    func getFeed(forCity city: City) async -> Result<FeedData, NetworkError> {
+    func getFeed(forCity city: CityInput) async -> Result<FeedData, NetworkError> {
         let result = await performRequest(to: Endpoint.feed(city: city))
 
         let data: Data
@@ -27,6 +27,10 @@ class NetworkEngine: NetworkService {
         }
 
         return .success(FeedData(feedDTO: feedDTO))
+    }
+
+    func getFeed(forUser _: UserCoordinates) async -> Result<FeedData, NetworkError> {
+        .failure(.invalidURL)
     }
 
     // MARK: Helpers

@@ -9,15 +9,15 @@ import SwiftUI
 
 struct ActionMenu: View {
     @Environment(\.isEnabled) private var isEnabled
+    @State private var presentAddCitySheet = false
 
     var body: some View {
         VStack(alignment: .leading) {
             Button {
-                // TODO: Add city call
+                presentAddCitySheet.toggle()
             } label: {
                 Label("Add City", systemImage: "plus.circle.fill")
             }
-            .disabled(isEnabled)
             .buttonStyle(.filled(color: .blue))
             HStack {
                 Button {
@@ -28,6 +28,10 @@ struct ActionMenu: View {
                 .disabled(isEnabled)
                 .buttonStyle(.filled(color: .blue))
             }
+        }
+        .sheet(isPresented: $presentAddCitySheet) {
+            AddCitySheet {}
+                .presentationDetents([.medium, .large])
         }
     }
 }

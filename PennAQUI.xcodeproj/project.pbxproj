@@ -19,7 +19,7 @@
 		D75C937C2BF96F4E0036F4DC /* FeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C937B2BF96F4E0036F4DC /* FeedData.swift */; };
 		D75C937E2BF96F570036F4DC /* CityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C937D2BF96F570036F4DC /* CityData.swift */; };
 		D75C93802BF96F680036F4DC /* StationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C937F2BF96F680036F4DC /* StationInfo.swift */; };
-		D75C93822BF96F6F0036F4DC /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C93812BF96F6F0036F4DC /* City.swift */; };
+		D75C93822BF96F6F0036F4DC /* CityInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C93812BF96F6F0036F4DC /* CityInput.swift */; };
 		D75C93842BF971230036F4DC /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C93832BF971230036F4DC /* Logger.swift */; };
 		D75C93882BF9732B0036F4DC /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C93872BF9732B0036F4DC /* NetworkEngine.swift */; };
 		D75C938A2BF9733E0036F4DC /* NetworkServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C93892BF9733E0036F4DC /* NetworkServiceMock.swift */; };
@@ -36,6 +36,9 @@
 		D7AA54CE2BF9565B00ABB99C /* FeedDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54CD2BF9565B00ABB99C /* FeedDTO.swift */; };
 		D7C019FF2BFA64B4007F1339 /* ActionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C019FE2BFA64B4007F1339 /* ActionMenu.swift */; };
 		D7C01A022BFA65B8007F1339 /* FilledButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C01A012BFA65B8007F1339 /* FilledButtonStyle.swift */; };
+		D7C01A042BFA9343007F1339 /* AddCitySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C01A032BFA9343007F1339 /* AddCitySheet.swift */; };
+		D7C01A062BFAA243007F1339 /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C01A052BFAA243007F1339 /* UserLocation.swift */; };
+		D7C01A082BFAA346007F1339 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C01A072BFAA346007F1339 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +55,7 @@
 		D75C937B2BF96F4E0036F4DC /* FeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedData.swift; sourceTree = "<group>"; };
 		D75C937D2BF96F570036F4DC /* CityData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityData.swift; sourceTree = "<group>"; };
 		D75C937F2BF96F680036F4DC /* StationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationInfo.swift; sourceTree = "<group>"; };
-		D75C93812BF96F6F0036F4DC /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		D75C93812BF96F6F0036F4DC /* CityInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInput.swift; sourceTree = "<group>"; };
 		D75C93832BF971230036F4DC /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		D75C93872BF9732B0036F4DC /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
 		D75C93892BF9733E0036F4DC /* NetworkServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceMock.swift; sourceTree = "<group>"; };
@@ -70,6 +73,9 @@
 		D7AA54CD2BF9565B00ABB99C /* FeedDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDTO.swift; sourceTree = "<group>"; };
 		D7C019FE2BFA64B4007F1339 /* ActionMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionMenu.swift; sourceTree = "<group>"; };
 		D7C01A012BFA65B8007F1339 /* FilledButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledButtonStyle.swift; sourceTree = "<group>"; };
+		D7C01A032BFA9343007F1339 /* AddCitySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCitySheet.swift; sourceTree = "<group>"; };
+		D7C01A052BFAA243007F1339 /* UserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
+		D7C01A072BFAA346007F1339 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,8 +138,9 @@
 			children = (
 				D75C937B2BF96F4E0036F4DC /* FeedData.swift */,
 				D75C937D2BF96F570036F4DC /* CityData.swift */,
+				D75C93812BF96F6F0036F4DC /* CityInput.swift */,
 				D75C937F2BF96F680036F4DC /* StationInfo.swift */,
-				D75C93812BF96F6F0036F4DC /* City.swift */,
+				D7C01A052BFAA243007F1339 /* UserLocation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -197,6 +204,7 @@
 			children = (
 				D7AA54B42BF954B500ABB99C /* InitialView.swift */,
 				D7C019FE2BFA64B4007F1339 /* ActionMenu.swift */,
+				D7C01A032BFA9343007F1339 /* AddCitySheet.swift */,
 				D7C01A002BFA65A7007F1339 /* Common */,
 				D709C8C92BF9CA9E007993D0 /* Cells */,
 				D709C8C22BF9B51C007993D0 /* Helpers */,
@@ -258,6 +266,7 @@
 				D709C8BA2BF974D7007993D0 /* Theme */,
 				D7AA54C02BF954B500ABB99C /* Extensions */,
 				D75C93832BF971230036F4DC /* Logger.swift */,
+				D7C01A072BFAA346007F1339 /* LocationManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -356,6 +365,8 @@
 				D709C8CF2BF9CC34007993D0 /* DetailCell.swift in Sources */,
 				D7C019FF2BFA64B4007F1339 /* ActionMenu.swift in Sources */,
 				D7AA54C42BF954B500ABB99C /* Store.swift in Sources */,
+				D7C01A062BFAA243007F1339 /* UserLocation.swift in Sources */,
+				D7C01A082BFAA346007F1339 /* LocationManager.swift in Sources */,
 				D7AA54C82BF954B500ABB99C /* EnvironmentValues+Extensions.swift in Sources */,
 				D7AA54C22BF954B500ABB99C /* InitialView.swift in Sources */,
 				D709C8BC2BF974DC007993D0 /* Theme.swift in Sources */,
@@ -374,9 +385,10 @@
 				D75C93722BF964B40036F4DC /* NetworkError.swift in Sources */,
 				D75C938A2BF9733E0036F4DC /* NetworkServiceMock.swift in Sources */,
 				D75C93742BF964BF0036F4DC /* Endpoint.swift in Sources */,
-				D75C93822BF96F6F0036F4DC /* City.swift in Sources */,
+				D75C93822BF96F6F0036F4DC /* CityInput.swift in Sources */,
 				D709C8CB2BF9CAA9007993D0 /* LatLongCell.swift in Sources */,
 				D75C93792BF96E8D0036F4DC /* EmptyBacked.swift in Sources */,
+				D7C01A042BFA9343007F1339 /* AddCitySheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
