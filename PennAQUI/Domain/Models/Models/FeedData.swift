@@ -19,6 +19,7 @@ struct FeedData: Codable {
     var time: Date?
     var cityData: CityData?
     var stationInfo: StationInfo?
+    var isDerivedFromCurrentLocation: Bool = false
 }
 
 extension FeedData {

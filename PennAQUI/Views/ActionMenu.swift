@@ -21,16 +21,9 @@ struct ActionMenu: View {
             .buttonStyle(.filled(color: .blue))
             HStack {
                 Button {
-                    // TODO: Add city call
+                    // TODO: Show city list drawer
                 } label: {
-                    Label("Prev", systemImage: "arrow.left.circle.fill")
-                }
-                .disabled(isEnabled)
-                .buttonStyle(.filled(color: .blue))
-                Button {
-                    // TODO: Add city call
-                } label: {
-                    Label("Next", systemImage: "arrow.right.circle.fill")
+                    Label("Select city...", systemImage: "building.2")
                 }
                 .disabled(isEnabled)
                 .buttonStyle(.filled(color: .blue))

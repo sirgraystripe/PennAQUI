@@ -33,7 +33,6 @@ struct InitialView: View {
                                 Text("\(store.feedData.airQualityIndex ?? 0)")
                                     .font(Theme.fonts.body)
                             }
-
                             DetailCell(
                                 title: "Tomorrow",
                                 systemImage: "arrow.right.circle.fill"
@@ -46,16 +45,17 @@ struct InitialView: View {
                 }
                 .padding(.top, Theme.constants.size50)
                 GridRow {
-                    HStack(alignment: .top) {
-                        DetailCell(title: "LAT / LONG") {
-                            Text("\(store.feedData.cityData?.lat ?? 0.0)")
-                            Text("\(store.feedData.cityData?.long ?? 0.0)")
+                    if store.feedData.isDerivedFromCurrentLocation {
+                        HStack(alignment: .top) {
+                            DetailCell(title: "CURRENT LAT / LONG") {
+                                Text("\(store.feedData.cityData?.lat ?? 0.0)")
+                                Text("\(store.feedData.cityData?.long ?? 0.0)")
+                            }
                         }
-                    }
-                }
-                GridRow {
-                    DetailCell(title: "CITY") {
-                        Text(store.feedData.cityData?.name ?? "Unknown")
+                    } else {
+                        DetailCell(title: "CITY") {
+                            Text(store.feedData.cityData?.name ?? "Unknown")
+                        }
                     }
                 }
                 GridRow {

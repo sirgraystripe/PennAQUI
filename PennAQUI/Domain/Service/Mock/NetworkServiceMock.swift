@@ -27,7 +27,8 @@ struct NetworkServiceMock: NetworkService {
                     url: nil,
                     name: "Mordor Meterology",
                     logoURL: nil
-                )
+                ),
+                isDerivedFromCurrentLocation: true
             )
         )
     }
