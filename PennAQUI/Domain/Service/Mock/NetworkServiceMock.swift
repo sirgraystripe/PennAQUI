@@ -23,11 +23,11 @@ struct NetworkServiceMock: NetworkService {
                     long: 24.9382,
                     logoURL: nil
                 ),
-                stationInfo: [StationInfo(
+                stationInfo: StationInfo(
                     url: nil,
                     name: "Mordor Meterology",
                     logoURL: nil
-                )]
+                )
             )
         )
     }

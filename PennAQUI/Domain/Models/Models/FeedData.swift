@@ -18,7 +18,7 @@ struct FeedData: Codable {
     var airQualityIndex: Int?
     var time: Date?
     var cityData: CityData?
-    var stationInfo: [StationInfo]?
+    var stationInfo: StationInfo?
 }
 
 extension FeedData {
@@ -52,8 +52,9 @@ extension FeedData {
             cityData = CityData(cityDTO: cityDTO)
         }
 
-        if let attributionsDTOs = data.attributions {
-            stationInfo = attributionsDTOs.map { StationInfo(attributionsDTO: $0) }
+        // Seems to return the org as an attribution after; for now, just pulling the first out
+        if let attributionsDTO = data.attributions?.first {
+            stationInfo = StationInfo(attributionsDTO: attributionsDTO)
         }
     }
 }

@@ -13,9 +13,7 @@ enum Theme {
     typealias constants = ThemeConstants
 }
 
-enum ThemeColors {
-    // TODO:
-}
+enum ThemeColors {}
 
 enum ThemeFonts {
     private static var headerFontName: String {

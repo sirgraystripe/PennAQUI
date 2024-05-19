@@ -12,3 +12,9 @@ extension View {
         modifier(CellBackgroundModifier())
     }
 }
+
+extension ButtonStyle where Self == FilledButtonStyle {
+    static func filled(color: Color) -> FilledButtonStyle {
+        FilledButtonStyle(color: color)
+    }
+}

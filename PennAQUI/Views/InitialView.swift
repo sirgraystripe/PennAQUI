@@ -17,11 +17,31 @@ struct InitialView: View {
                 .frame(maxWidth: 50)
             Grid(alignment: .leading) {
                 GridRow {
-                    DetailCell(title: "AQI") {
-                        // capHeight is not 100%, but good for reducing baseline
-                        Text("\(store.feedData.airQualityIndex ?? 0)")
-                            .font(Theme.fonts.gigantic)
-                            .frame(height: Theme.fonts.giganticUIFont.capHeight)
+                    HStack(alignment: .top) {
+                        DetailCell(title: "AQI") {
+                            // capHeight is not 100%, but good for reducing baseline
+                            Text("\(store.feedData.airQualityIndex ?? 0)")
+                                .font(Theme.fonts.gigantic)
+                                .frame(height: Theme.fonts.giganticUIFont.capHeight)
+                        }
+
+                        HStack {
+                            DetailCell(
+                                title: "Yesterday",
+                                systemImage: "arrow.left.circle.fill"
+                            ) {
+                                Text("\(store.feedData.airQualityIndex ?? 0)")
+                                    .font(Theme.fonts.body)
+                            }
+
+                            DetailCell(
+                                title: "Tomorrow",
+                                systemImage: "arrow.right.circle.fill"
+                            ) {
+                                Text("\(store.feedData.airQualityIndex ?? 0)")
+                                    .font(Theme.fonts.body)
+                            }
+                        }
                     }
                 }
                 .padding(.top, Theme.constants.size50)
@@ -38,7 +58,15 @@ struct InitialView: View {
                         Text(store.feedData.cityData?.name ?? "Unknown")
                     }
                 }
+                GridRow {
+                    DetailCell(title: "STATION") {
+                        Text(store.feedData.stationInfo?.name ?? "")
+                    }
+                    .disabled(true)
+                }
                 Spacer()
+                ActionMenu()
+                    .padding(.bottom, Theme.constants.size50 * 2)
             }
             Spacer()
         }
