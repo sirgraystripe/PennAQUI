@@ -14,7 +14,7 @@ struct PennAQUIApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
-                .environmentObject(Store.mocked)
+                .environmentObject(store)
         }
     }
 }

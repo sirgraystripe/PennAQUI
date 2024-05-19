@@ -30,7 +30,7 @@ class NetworkEngine: NetworkService {
     }
 
     func getFeed(forUser _: UserCoordinates) async -> Result<FeedData, NetworkError> {
-        .failure(.invalidURL)
+        .failure(.notImplemented("get feed for user"))
     }
 
     // MARK: Helpers
