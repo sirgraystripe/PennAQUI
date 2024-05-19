@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct PennAQUIApp: App {
-    @StateObject private var store = Store(service: ServiceEngine())
+    @StateObject private var store = Store(service: NetworkEngine())
 
     var body: some Scene {
         WindowGroup {
             RootView()
+                .environmentObject(Store.mocked)
         }
-        .environmentObject(store)
     }
 }

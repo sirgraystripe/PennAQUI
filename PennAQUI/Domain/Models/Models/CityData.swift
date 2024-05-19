@@ -11,8 +11,8 @@ import Foundation
 /// Contrast this to `City`, which is meant for input.
 struct CityData: Codable {
     var name: String?
-    var lat: Int?
-    var long: Int?
+    var lat: Double?
+    var long: Double?
     var logoURL: URL?
 }
 

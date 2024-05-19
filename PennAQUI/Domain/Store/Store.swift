@@ -11,7 +11,7 @@ import OSLog
 class Store: ObservableObject {
     // MARK: Data
 
-    @Published private var feedData: FeedData = .empty()
+    @Published var feedData: FeedData = .empty()
 
     // MARK: Utilities
 
@@ -24,10 +24,18 @@ class Store: ObservableObject {
     func load(city: City) async {
         switch await service.getFeed(forCity: city) {
         case let .success(feedData):
-            self.feedData = feedData
-            AQILogger.Network.info("Successfully got feed data: \(String(describing: feedData))")
+            Task { @MainActor in
+                self.feedData = feedData
+                AQILogger.Network.info("Successfully got feed data: \(String(describing: feedData))")
+            }
         case let .failure(networkError):
             AQILogger.Network.error("\(networkError.localizedDescription)")
         }
+    }
+}
+
+extension Store {
+    static var mocked: Store {
+        Store(service: NetworkServiceMock())
     }
 }

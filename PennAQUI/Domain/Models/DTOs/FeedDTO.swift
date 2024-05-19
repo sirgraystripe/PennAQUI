@@ -35,7 +35,7 @@ struct AttributionsDTO: Codable {
 /// Also returns a `location` field, not in docs, empty.
 struct CityDTO: Codable {
     var name: String?
-    var geo: [Int]?
+    var geo: [Double]?
     var url: String?
 }
 

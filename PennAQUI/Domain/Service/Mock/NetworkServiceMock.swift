@@ -15,15 +15,19 @@ struct NetworkServiceMock: NetworkService {
             FeedData(
                 status: .ok,
                 cityStationID: 12,
-                airQualityIndex: 12,
+                airQualityIndex: 24,
                 time: .now,
                 cityData: CityData(
                     name: "The Shire",
-                    lat: 20,
-                    long: 24,
+                    lat: 20.2811,
+                    long: 24.9382,
                     logoURL: nil
                 ),
-                stationInfo: nil
+                stationInfo: [StationInfo(
+                    url: nil,
+                    name: "Mordor Meterology",
+                    logoURL: nil
+                )]
             )
         )
     }
