@@ -11,20 +11,26 @@ import SwiftUI
 struct QualityRange: View {
     @Binding var value: Int?
 
-    var barColor: Color {
-        guard let value else {
-            return .blue
-        }
-        return switch value {
-        case 0 ... 66: .green
-        case 67 ... 99: .yellow
-        case 100 ... 149: .orange
-        case 150 ... 200: .red
-        default: .purple
-        }
+    @Binding private var barColor: Color
+
+    init(value: Binding<Int?>) {
+        _value = value
+        _barColor = Binding {
+            guard let value = value.wrappedValue else {
+                return .blue
+            }
+            return switch value {
+            case 0 ... 66: .green
+            case 67 ... 99: .yellow
+            case 100 ... 149: .orange
+            case 150 ... 200: .red
+            default: .purple
+            }
+        } set: { _ in }
     }
 
     var body: some View {
+        let _ = value
         Chart {
             BarMark(
                 x: .value("aqi", ""),
@@ -45,6 +51,7 @@ struct QualityRange: View {
             )
         }
         .animation(.snappy, value: value)
+        .animation(.snappy, value: barColor)
     }
 }
 

@@ -12,14 +12,15 @@ struct InitialView: View {
     @EnvironmentObject private var store: Store
 
     var body: some View {
-        HStack(spacing: 20) {
+        HStack(alignment: .top, spacing: 20) {
             QualityRange(value: $store.activeFeed.airQualityIndex)
                 .frame(maxWidth: 50)
+                .padding(.vertical, Theme.constants.size25)
             Grid(alignment: .leading) {
                 GridRow {
                     AQIRow()
                 }
-                .padding(.top, Theme.constants.size50)
+                .padding(.top, Theme.constants.size25)
                 GridRow {
                     switch store.activeFeed.feedCategory {
                     case .city:
@@ -47,7 +48,7 @@ struct InitialView: View {
             }
             Spacer()
         }
-        .padding(.horizontal, 30)
+        .padding(.horizontal, 20)
     }
 }
 

@@ -11,14 +11,13 @@ struct AQIRow: View {
     @EnvironmentObject private var store: Store
 
     var body: some View {
-        HStack(alignment: .top) {
+        VStack(alignment: .leading) {
             DetailCell(title: "AQI") {
                 // capHeight is not 100%, but good for reducing baseline
                 Text("\(store.activeFeed.airQualityIndex ?? 0)")
                     .font(Theme.fonts.gigantic)
                     .frame(height: Theme.fonts.giganticUIFont.capHeight)
             }
-
             HStack {
                 DetailCell(
                     title: "Yesterday",
@@ -40,5 +39,12 @@ struct AQIRow: View {
 }
 
 #Preview {
-    AQIRow()
+    @State var store = Store.mocked
+    return InitialView()
+        .environmentObject(store)
+        .onAppear {
+            Task {
+                await store.loadUserFeed(userCoordinates: .init(latitude: 10, longitude: 10))
+            }
+        }
 }

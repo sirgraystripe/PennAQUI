@@ -38,7 +38,7 @@ struct NetworkServiceMock: NetworkService {
             FeedData(
                 status: .ok,
                 cityStationID: 12,
-                airQualityIndex: 24,
+                airQualityIndex: 240,
                 time: .now,
                 cityData: CityData(
                     lat: user.latitude,

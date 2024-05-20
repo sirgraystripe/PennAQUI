@@ -54,4 +54,5 @@ enum ThemeConstants {
     static var cornerRadius: CGFloat = 4.0
 
     static var size50: CGFloat = 50
+    static var size25: CGFloat = 25
 }
