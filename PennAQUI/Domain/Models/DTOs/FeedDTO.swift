@@ -31,9 +31,9 @@ struct DataDTO: Codable {
     var time: TimeDTO?
     var city: CityDTO?
     var attributions: [AttributionsDTO]?
-    // TODO: Leaving these out for now
+    var forecast: ForecastDTO?
+    // Not needed.
 //    var iaqi: IAQIDTO?
-//    var forecast: ForecastDTO?
 }
 
 /// EPA Attributions, not documented
@@ -53,4 +53,15 @@ struct CityDTO: Codable {
 struct TimeDTO: Codable {
     var s: String?
     var tz: String?
+}
+
+struct ForecastDTO: Codable {
+    var daily: [DailyForecastDTO]?
+}
+
+struct DailyForecastDTO: Codable  {
+    var pm25: String?
+    var pm10: String?
+    var o3: String?
+    var uvi: String?
 }

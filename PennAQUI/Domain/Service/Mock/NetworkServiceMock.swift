@@ -28,7 +28,11 @@ struct NetworkServiceMock: NetworkService {
                     name: "Mordor Meteorology",
                     logoURL: nil
                 ),
-                feedCategory: .city
+                feedCategory: .city,
+                forecast: ForecastData(
+                    tomorrowPM25: "123",
+                    dayAfterPM25: "456"
+                )
             )
         )
     }
@@ -49,7 +53,11 @@ struct NetworkServiceMock: NetworkService {
                     name: "Mordor Meteorology",
                     logoURL: nil
                 ),
-                feedCategory: .user
+                feedCategory: .user,
+                forecast: ForecastData(
+                    tomorrowPM25: "500",
+                    dayAfterPM25: "222"
+                )
             )
         )
     }

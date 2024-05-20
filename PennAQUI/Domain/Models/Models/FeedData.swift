@@ -20,6 +20,7 @@ struct FeedData: Codable {
     var cityData: CityData?
     var stationInfo: StationInfo?
     var feedCategory: FeedCategory
+    var forecast: ForecastData?
 }
 
 extension FeedData {
@@ -57,6 +58,10 @@ extension FeedData {
         // Seems to return the org as an attribution after; for now, just pulling the first out
         if let attributionsDTO = data.attributions?.first {
             stationInfo = StationInfo(attributionsDTO: attributionsDTO)
+        }
+
+        if let forecastDTO = data.forecast {
+            forecast = ForecastData(forecastDTO: forecastDTO)
         }
     }
 }
