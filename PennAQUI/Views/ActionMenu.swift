@@ -37,11 +37,6 @@ struct ActionMenu: View {
                 }
                 .pickerStyle(.palette)
             }
-            #if DEBUG
-                Button("Reset Onboarding") {
-                    store.presentOnboarding = true
-                }
-            #endif
         }
         .onChange(of: feedCategory) { _, feedCategory in
             store.setActiveFeed(feedCategory)

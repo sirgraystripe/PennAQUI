@@ -9,17 +9,16 @@ import SwiftUI
 
 struct RootView: View {
     @EnvironmentObject private var store: Store
-    @AppStorage("firstLaunch") private var firstLaunch: Bool = true
+    @ObservedObject private var locationManager = LocationManager.shared
 
     var body: some View {
         InitialView()
             .sheet(isPresented: $store.presentOnboarding) {
-                Onboarding {
-                    firstLaunch = false
-                }
+                Onboarding()
+                    .interactiveDismissDisabled()
             }
-            .onChange(of: firstLaunch, initial: true) { _, firstLaunch in
-                store.presentOnboarding = firstLaunch
+            .onChange(of: locationManager.locationPermissions, initial: true) { _, locationPermissions in
+                store.presentOnboarding = locationPermissions != .granted
             }
     }
 }

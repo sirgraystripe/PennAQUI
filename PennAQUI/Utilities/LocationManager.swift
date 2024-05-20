@@ -14,12 +14,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var userCoordinates: UserCoordinates?
 
     private let clLocationManager = CLLocationManager()
-    private var isAuthorized: Bool {
-        switch clLocationManager.authorizationStatus {
-        case .authorizedAlways, .authorizedWhenInUse: true
-        default: false
-        }
-    }
+    @Published var locationPermissions: LocationPermissionStatus = .unknown
 
     override init() {
         super.init()
@@ -30,7 +25,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
 
     func startMonitoringLocationWithRequest() {
-        guard isAuthorized else {
+        guard locationPermissions.isGranted else {
             AQILogger.Location.error("Unable to get user location: not authorized. Requesting...")
             clLocationManager.requestWhenInUseAuthorization()
             return
@@ -40,7 +35,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
 
     func startMonitoringLocationIfAuthorized() {
-        if isAuthorized {
+        if locationPermissions.isGranted {
             clLocationManager.startUpdatingLocation()
             AQILogger.Location.info("Started monitoring (already authorized)")
         }
@@ -57,8 +52,13 @@ extension LocationManager {
 
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         AQILogger.Location.debug("Location auth status changed: \(manager.authorizationStatus.rawValue)")
+        locationPermissions = switch clLocationManager.authorizationStatus {
+        case .authorizedAlways, .authorizedWhenInUse: .granted
+        case .notDetermined: .unknown
+        default: .denied
+        }
 
-        if isAuthorized {
+        if locationPermissions.isGranted {
             clLocationManager.startUpdatingLocation()
             AQILogger.Location.info("Authorized. Started monitoring location.")
         }
@@ -84,5 +84,22 @@ extension LocationManager {
 
     func locationManager(_: CLLocationManager, didFailWithError error: any Error) {
         AQILogger.Location.error("Failed to get location with error: \(error.localizedDescription)")
+    }
+}
+
+extension LocationManager {
+    /// A little abstraction to simplify cases
+    enum LocationPermissionStatus: String {
+        case granted
+        case denied
+        case unknown
+
+        var isGranted: Bool {
+            self == .granted
+        }
+
+        var description: String {
+            rawValue.capitalized
+        }
     }
 }
