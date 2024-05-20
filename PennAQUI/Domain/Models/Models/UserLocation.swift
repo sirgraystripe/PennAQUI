@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct UserCoordinates {
+struct UserCoordinates: Equatable, CustomStringConvertible {
     var latitude: Double
     var longitude: Double
+
+    var description: String {
+        "(\(latitude), \(longitude)"
+    }
 }

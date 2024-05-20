@@ -14,7 +14,7 @@ struct ActionMenu: View {
     @State private var presentAddCitySheet = false
     @State private var feedCategory: FeedCategory = .user
 
-    private var citiesAdded: Bool {
+    private var cityAdded: Bool {
         store.feedData[.city] != nil
     }
 
@@ -26,7 +26,7 @@ struct ActionMenu: View {
                 Label("Add City", systemImage: "plus.circle.fill")
             }
             .buttonStyle(.filled(color: .blue))
-            if citiesAdded {
+            if cityAdded {
                 Picker("Feed", selection: $feedCategory) {
                     Image(systemName: "location.viewfinder")
                         .resizable()

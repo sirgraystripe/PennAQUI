@@ -5,8 +5,8 @@
 //  Created by Peter Kos on 5/18/24.
 //
 
+import Combine
 import Foundation
-import OSLog
 
 class Store: ObservableObject {
     // MARK: Data
@@ -15,24 +15,37 @@ class Store: ObservableObject {
     @Published var activeFeed: FeedData = .empty()
     @Published var presentOnboarding = false
 
+    var cancellable: AnyCancellable? = nil
+
     // MARK: Utilities
 
     var service: NetworkService
 
     init(service: NetworkService) {
         self.service = service
+
+        cancellable = LocationManager.shared.$userCoordinates
+            .compactMap { $0 }
+            .throttle(for: 2, scheduler: RunLoop.main, latest: true)
+            .removeDuplicates()
+            .sink { userCoordinates in
+                AQILogger.Network.debug("Coordinates received: \(userCoordinates)")
+                Task { [weak self] in
+                    await self?.loadUserFeed(userCoordinates: userCoordinates)
+                }
+            }
     }
 
-    func loadUserFeed() async {
-        switch await service.getFeed(forUser: .init(latitude: 0, longitude: 0)) {
+    func loadUserFeed(userCoordinates: UserCoordinates) async {
+        switch await service.getFeed(forUser: userCoordinates) {
         case let .success(feedData):
-            Task { @MainActor in
+            DispatchQueue.main.async {
                 self.feedData[.user] = feedData
                 self.setActiveFeed(.user)
                 AQILogger.Network.info("Successfully got user feed data: \(String(describing: feedData))")
             }
         case let .failure(networkError):
-            AQILogger.Network.error("\(networkError.localizedDescription)")
+            AQILogger.Network.error("Error fetching user feed: \(networkError.localizedDescription)")
         }
     }
 

@@ -23,54 +23,63 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 
     override init() {
         super.init()
-        self.clLocationManager.delegate = self
-        AQILogger.Location.info("Authorization state: \(self.clLocationManager.authorizationStatus.rawValue)")
+        clLocationManager.delegate = self
+        // Save a bit of power
+        clLocationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        AQILogger.Location.debug("Authorization state: \(self.clLocationManager.authorizationStatus.rawValue)")
     }
 
-    func getUserLocation() {
+    func startMonitoringLocationWithRequest() {
         guard isAuthorized else {
             AQILogger.Location.error("Unable to get user location: not authorized. Requesting...")
             clLocationManager.requestWhenInUseAuthorization()
             return
         }
-        clLocationManager.startMonitoringVisits()
+        clLocationManager.startUpdatingLocation()
         AQILogger.Location.info("Started monitoring location")
     }
 
+    func startMonitoringLocationIfAuthorized() {
+        if isAuthorized {
+            clLocationManager.startUpdatingLocation()
+            AQILogger.Location.info("Started monitoring (already authorized)")
+        }
+    }
+
     func stopMonitoringLocation() {
-        clLocationManager.stopMonitoringVisits()
+        clLocationManager.stopUpdatingLocation()
         AQILogger.Location.info("Stopped monitoring location")
     }
+}
 
-    func locationManagerDidPauseLocationUpdates(_: CLLocationManager) {
-        AQILogger.Location.info("Did pause location updates")
-    }
-
+extension LocationManager {
     // MARK: CLLocationManagerDelegate
 
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         AQILogger.Location.debug("Location auth status changed: \(manager.authorizationStatus.rawValue)")
 
         if isAuthorized {
-            clLocationManager.startMonitoringVisits()
-            AQILogger.Location.info("Started monitoring location after permissions request")
+            clLocationManager.startUpdatingLocation()
+            AQILogger.Location.info("Authorized. Started monitoring location.")
         }
     }
 
-    func locationManager(_: CLLocationManager, didVisit visit: CLVisit) {
-        let latitude = visit.coordinate.latitude
-        let longitude = visit.coordinate.longitude
-        AQILogger.Location.info("User entered (\(latitude), \(longitude)) at \(visit.arrivalDate)")
+    func locationManager(_: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let latestLocation = locations.last else {
+            AQILogger.Location.error("Location data not found in update.")
+            return
+        }
+
+        AQILogger.Location.debug("Location update: \(latestLocation)")
+
+        let latitude = latestLocation.coordinate.latitude
+        let longitude = latestLocation.coordinate.longitude
         Task { @MainActor in
             userCoordinates = UserCoordinates(
                 latitude: latitude,
                 longitude: longitude
             )
         }
-    }
-
-    func locationManager(_: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        AQILogger.Location.info("locations: \(locations)")
     }
 
     func locationManager(_: CLLocationManager, didFailWithError error: any Error) {

@@ -10,13 +10,21 @@ import SwiftUI
 @main
 struct PennAQUIApp: App {
     @StateObject private var store = Store(service: NetworkEngine())
+    @Environment(\.scenePhase) private var scenePhase
 
     var body: some Scene {
         WindowGroup {
             RootView()
                 .environmentObject(Store.mocked)
-                .onDisappear {
-                    LocationManager.shared.stopMonitoringLocation()
+                .onChange(of: scenePhase) { _, scenePhase in
+                    switch scenePhase {
+                    case .background, .inactive:
+                        LocationManager.shared.stopMonitoringLocation()
+                    case .active:
+                        LocationManager.shared.startMonitoringLocationIfAuthorized()
+                    @unknown default:
+                        break
+                    }
                 }
         }
     }

@@ -72,11 +72,6 @@ struct InitialView: View {
             Spacer()
         }
         .padding(.horizontal, 30)
-        .onAppear {
-            Task {
-                await store.loadUserFeed()
-            }
-        }
     }
 }
 

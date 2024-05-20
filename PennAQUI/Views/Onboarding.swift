@@ -20,7 +20,7 @@ struct Onboarding: View {
                 .multilineTextAlignment(.center)
             Spacer()
             Button("I Will", systemImage: "arrow.right") {
-                LocationManager.shared.getUserLocation()
+                LocationManager.shared.startMonitoringLocationWithRequest()
                 dismiss()
                 onDismiss()
             }
