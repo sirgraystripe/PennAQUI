@@ -27,11 +27,9 @@ struct AddCitySheet: View {
                     if let feedResult {
                         store.addCityFeed(feedResult)
                         dismiss()
-                    } else {
-                        AQILogger.UI.error("User attempted nil city add. Is the add button disabled correctly?")
                     }
                 }
-                .buttonStyle(.filled(color: .black))
+                .butonStyle(.filled(color: .black))
                 .disabled(feedResult == nil)
             }
             // Title size is a little finicky

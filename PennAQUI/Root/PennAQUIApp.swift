@@ -9,8 +9,10 @@ import SwiftUI
 
 @main
 struct PennAQUIApp: App {
-    @StateObject private var store = Store(service: NetworkEngine())
     @Environment(\.scenePhase) private var scenePhase
+    @StateObject private var store = Store(service: NetworkEngine())
+    // Mocked:
+//    @StateObject private var store = Store.mocked
 
     var body: some Scene {
         WindowGroup {
