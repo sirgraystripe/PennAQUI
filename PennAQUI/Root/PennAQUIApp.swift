@@ -1,5 +1,5 @@
 //
-//  NewProjectApp.swift
+//  PennAQUIApp.swift
 //  PennAQUI
 //
 //  Created by Peter Kos on 5/18/24.
@@ -15,7 +15,7 @@ struct PennAQUIApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
-                .environmentObject(Store.mocked)
+                .environmentObject(store)
                 .onChange(of: scenePhase) { _, scenePhase in
                     switch scenePhase {
                     case .background, .inactive:

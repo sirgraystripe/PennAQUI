@@ -12,6 +12,17 @@ struct FeedDTO: Codable {
     var data: DataDTO?
 }
 
+/// Fallback for presented errors due to type constraints
+struct FeedErrorDTO: Codable {
+    var status: String?
+    var errorString: String?
+
+    enum CodingKeys: String, CodingKey {
+        case status
+        case errorString = "data"
+    }
+}
+
 /// Also gives back a `debug` obj with `sync` (ISO 8601) timestamp
 /// not in docs, ignoring it for now.
 struct DataDTO: Codable {

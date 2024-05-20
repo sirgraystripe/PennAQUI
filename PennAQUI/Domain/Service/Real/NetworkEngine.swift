@@ -29,8 +29,28 @@ class NetworkEngine: NetworkService {
         return .success(FeedData(feedDTO: feedDTO, category: .city))
     }
 
-    func getFeed(forUser _: UserCoordinates) async -> Result<FeedData, NetworkError> {
-        .failure(.notImplemented("get feed for user"))
+    func getFeed(forUser user: UserCoordinates) async -> Result<FeedData, NetworkError> {
+        let result = await performRequest(to: Endpoint.feed(user: user))
+
+        let data: Data
+        switch result {
+        case let .success(responseData): data = responseData
+        case let .failure(failure): return .failure(failure)
+        }
+
+        let feedDTO: FeedDTO
+        do {
+            feedDTO = try JSONDecoder().decode(FeedDTO.self, from: data)
+        } catch {
+            // Attempt to extract an error
+            if let errorDTO = try? JSONDecoder().decode(FeedErrorDTO.self, from: data) {
+                return .failure(.sessionError(errorDTO.errorString ?? "Server did not describe error."))
+            } else {
+                return .failure(.jsonParseError(error.localizedDescription))
+            }
+        }
+
+        return .success(FeedData(feedDTO: feedDTO, category: .user))
     }
 
     // MARK: Helpers

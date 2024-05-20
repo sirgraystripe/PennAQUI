@@ -26,7 +26,7 @@ class Store: ObservableObject {
 
         cancellable = LocationManager.shared.$userCoordinates
             .compactMap { $0 }
-            .throttle(for: 2, scheduler: RunLoop.main, latest: true)
+            .throttle(for: 10, scheduler: RunLoop.main, latest: true)
             .removeDuplicates()
             .sink { userCoordinates in
                 AQILogger.Network.debug("Coordinates received: \(userCoordinates)")

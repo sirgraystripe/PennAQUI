@@ -28,7 +28,7 @@
 		D7AA54C22BF954B500ABB99C /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54B42BF954B500ABB99C /* InitialView.swift */; };
 		D7AA54C32BF954B500ABB99C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54B62BF954B500ABB99C /* NetworkService.swift */; };
 		D7AA54C42BF954B500ABB99C /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54B82BF954B500ABB99C /* Store.swift */; };
-		D7AA54C52BF954B500ABB99C /* NewProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54BB2BF954B500ABB99C /* NewProjectApp.swift */; };
+		D7AA54C52BF954B500ABB99C /* PennAQUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54BB2BF954B500ABB99C /* PennAQUIApp.swift */; };
 		D7AA54C62BF954B500ABB99C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54BC2BF954B500ABB99C /* RootView.swift */; };
 		D7AA54C72BF954B500ABB99C /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54BE2BF954B500ABB99C /* Collection+Extensions.swift */; };
 		D7AA54C82BF954B500ABB99C /* EnvironmentValues+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54BF2BF954B500ABB99C /* EnvironmentValues+Extensions.swift */; };
@@ -67,7 +67,7 @@
 		D7AA54B42BF954B500ABB99C /* InitialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
 		D7AA54B62BF954B500ABB99C /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D7AA54B82BF954B500ABB99C /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		D7AA54BB2BF954B500ABB99C /* NewProjectApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectApp.swift; sourceTree = "<group>"; };
+		D7AA54BB2BF954B500ABB99C /* PennAQUIApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PennAQUIApp.swift; sourceTree = "<group>"; };
 		D7AA54BC2BF954B500ABB99C /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		D7AA54BE2BF954B500ABB99C /* Collection+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		D7AA54BF2BF954B500ABB99C /* EnvironmentValues+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+Extensions.swift"; sourceTree = "<group>"; };
@@ -250,7 +250,7 @@
 		D7AA54BD2BF954B500ABB99C /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				D7AA54BB2BF954B500ABB99C /* NewProjectApp.swift */,
+				D7AA54BB2BF954B500ABB99C /* PennAQUIApp.swift */,
 				D7AA54BC2BF954B500ABB99C /* RootView.swift */,
 			);
 			path = Root;
@@ -385,7 +385,7 @@
 				D7C01A022BFA65B8007F1339 /* FilledButtonStyle.swift in Sources */,
 				D75C93842BF971230036F4DC /* Logger.swift in Sources */,
 				D7AA54C72BF954B500ABB99C /* Collection+Extensions.swift in Sources */,
-				D7AA54C52BF954B500ABB99C /* NewProjectApp.swift in Sources */,
+				D7AA54C52BF954B500ABB99C /* PennAQUIApp.swift in Sources */,
 				D7AA54CE2BF9565B00ABB99C /* FeedDTO.swift in Sources */,
 				D709C8C82BF9C4E5007993D0 /* QualityRange.swift in Sources */,
 				D75C93802BF96F680036F4DC /* StationInfo.swift in Sources */,

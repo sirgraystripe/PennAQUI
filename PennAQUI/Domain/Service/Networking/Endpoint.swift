@@ -26,7 +26,7 @@ enum Endpoint {
         guard var base = try? base.get() else {
             return .failure(.invalidURL)
         }
-
+        base.append(path: "feed")
         // Grr, case let.
         switch city {
         case let .name(name):
@@ -38,9 +38,22 @@ enum Endpoint {
         guard let token else {
             return .failure(.missingToken)
         }
-
         base.append(queryItems: [.init(name: "token", value: token)])
+        return .success(base)
+    }
 
+    static func feed(user: UserCoordinates) -> EndpointResult {
+        guard var base = try? base.get() else {
+            return .failure(.invalidURL)
+        }
+        // What a strange API.
+        base.append(path: "feed")
+        base.append(path: "geo:\(user.latitude);\(user.longitude)")
+
+        guard let token else {
+            return .failure(.missingToken)
+        }
+        base.append(queryItems: [.init(name: "token", value: token)])
         return .success(base)
     }
 }
