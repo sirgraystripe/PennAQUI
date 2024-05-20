@@ -24,6 +24,7 @@
 		D75C93882BF9732B0036F4DC /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C93872BF9732B0036F4DC /* NetworkEngine.swift */; };
 		D75C938A2BF9733E0036F4DC /* NetworkServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C93892BF9733E0036F4DC /* NetworkServiceMock.swift */; };
 		D76A6BC92BFBB331003CE17A /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76A6BC82BFBB331003CE17A /* ForecastData.swift */; };
+		D7806EFC2BFBC80F00769361 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7806EFB2BFBC80F00769361 /* Launch Screen.storyboard */; };
 		D7AA54AB2BF9544400ABB99C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7AA54AA2BF9544400ABB99C /* Assets.xcassets */; };
 		D7AA54AE2BF9544400ABB99C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7AA54AD2BF9544400ABB99C /* Preview Assets.xcassets */; };
 		D7AA54C22BF954B500ABB99C /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54B42BF954B500ABB99C /* InitialView.swift */; };
@@ -63,6 +64,7 @@
 		D75C93872BF9732B0036F4DC /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
 		D75C93892BF9733E0036F4DC /* NetworkServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceMock.swift; sourceTree = "<group>"; };
 		D76A6BC82BFBB331003CE17A /* ForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastData.swift; sourceTree = "<group>"; };
+		D7806EFB2BFBC80F00769361 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D7AA54A32BF9544400ABB99C /* PennAQUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PennAQUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7AA54AA2BF9544400ABB99C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7AA54AD2BF9544400ABB99C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				D7AA54B52BF954B500ABB99C /* Views */,
 				D7AA54AA2BF9544400ABB99C /* Assets.xcassets */,
 				D7AA54AC2BF9544400ABB99C /* Preview Content */,
+				D7806EFB2BFBC80F00769361 /* Launch Screen.storyboard */,
 			);
 			path = PennAQUI;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 			files = (
 				D7AA54AE2BF9544400ABB99C /* Preview Assets.xcassets in Resources */,
 				D7AA54AB2BF9544400ABB99C /* Assets.xcassets in Resources */,
+				D7806EFC2BFBC80F00769361 /* Launch Screen.storyboard in Resources */,
 				D7AA54CA2BF955A400ABB99C /* KeysConfig.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,11 +545,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PennAQUI/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSLocationUsageDescription = "Read AQI from your current location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Read AQI from your current location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -574,11 +580,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PennAQUI/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSLocationUsageDescription = "Read AQI from your current location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Read AQI from your current location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
