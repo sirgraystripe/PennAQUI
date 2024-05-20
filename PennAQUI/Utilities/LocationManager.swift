@@ -69,9 +69,6 @@ extension LocationManager {
             AQILogger.Location.error("Location data not found in update.")
             return
         }
-
-        AQILogger.Location.debug("Location update: \(latestLocation)")
-
         let latitude = latestLocation.coordinate.latitude
         let longitude = latestLocation.coordinate.longitude
         Task { @MainActor in

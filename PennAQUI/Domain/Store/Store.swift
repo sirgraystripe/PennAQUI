@@ -29,7 +29,6 @@ class Store: ObservableObject {
             .throttle(for: 10, scheduler: RunLoop.main, latest: true)
             .removeDuplicates()
             .sink { userCoordinates in
-                AQILogger.Network.debug("Coordinates received: \(userCoordinates)")
                 Task { [weak self] in
                     await self?.loadUserFeed(userCoordinates: userCoordinates)
                 }

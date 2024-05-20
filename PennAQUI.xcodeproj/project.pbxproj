@@ -101,13 +101,13 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
-		D709C8C22BF9B51C007993D0 /* Helpers */ = {
+		D709C8C22BF9B51C007993D0 /* Specialized */ = {
 			isa = PBXGroup;
 			children = (
-				D709C8C32BF9B528007993D0 /* CellBackgroundModifier.swift */,
+				D732FDDB2BFB160400E26CA5 /* AQIRow.swift */,
 				D709C8C72BF9C4E5007993D0 /* QualityRange.swift */,
 			);
-			path = Helpers;
+			path = Specialized;
 			sourceTree = "<group>";
 		};
 		D709C8C92BF9CA9E007993D0 /* Screens */ = {
@@ -211,8 +211,7 @@
 				D7C01A032BFA9343007F1339 /* AddCitySheet.swift */,
 				D709C8C92BF9CA9E007993D0 /* Screens */,
 				D7C01A002BFA65A7007F1339 /* Common */,
-				D709C8C22BF9B51C007993D0 /* Helpers */,
-				D732FDDB2BFB160400E26CA5 /* AQIRow.swift */,
+				D709C8C22BF9B51C007993D0 /* Specialized */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -291,6 +290,7 @@
 			children = (
 				D709C8CE2BF9CC34007993D0 /* DetailCell.swift */,
 				D7C01A012BFA65B8007F1339 /* FilledButtonStyle.swift */,
+				D709C8C32BF9B528007993D0 /* CellBackgroundModifier.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";

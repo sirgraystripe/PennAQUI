@@ -42,8 +42,12 @@ struct ActionMenu: View {
             store.setActiveFeed(feedCategory)
         }
         .sheet(isPresented: $presentAddCitySheet) {
+            let cityDataExists = store.feedData[.city] != nil
+            feedCategory =  cityDataExists ? .city : .user
+        } content: {
             AddCitySheet()
                 .presentationDetents([.medium, .large])
+
         }
     }
 }
