@@ -58,6 +58,12 @@ class Store: ObservableObject {
             AQILogger.UI.error("Attempt to switch to \(feedCategory.rawValue), but its data does not exist.")
             return
         }
+
+        switch feedCategory {
+        case .user: LocationManager.shared.startMonitoringLocationIfAuthorized()
+        case .city: LocationManager.shared.stopMonitoringLocation()
+        }
+
         activeFeed = feedData
     }
 }

@@ -14,8 +14,8 @@ struct NetworkServiceMock: NetworkService {
         .success(
             FeedData(
                 status: .ok,
-                cityStationID: 12,
-                airQualityIndex: 24,
+                cityStationID: 4,
+                airQualityIndex: 189,
                 time: .now,
                 cityData: CityData(
                     name: city.description,
