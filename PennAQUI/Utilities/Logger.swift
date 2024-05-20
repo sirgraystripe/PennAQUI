@@ -12,9 +12,10 @@ class AQILogger {
     private enum Subsystem: String, CustomStringConvertible {
         case networking
         case ui
+        case location
 
         var description: String {
-            rawValue.capitalized
+            "me.peterkos.PennAQUI.subsystem.\(rawValue.capitalized)"
         }
     }
 
@@ -24,5 +25,9 @@ class AQILogger {
 
     static var UI: Logger {
         Logger(subsystem: Subsystem.ui.description, category: "")
+    }
+
+    static var Location: Logger {
+        Logger(subsystem: Subsystem.location.description, category: "")
     }
 }

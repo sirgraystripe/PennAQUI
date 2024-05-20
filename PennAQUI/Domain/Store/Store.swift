@@ -13,6 +13,7 @@ class Store: ObservableObject {
 
     @Published var feedData = [FeedCategory: FeedData]()
     @Published var activeFeed: FeedData = .empty()
+    @Published var presentOnboarding = false
 
     // MARK: Utilities
 

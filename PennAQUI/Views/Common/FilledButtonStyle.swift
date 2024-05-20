@@ -15,6 +15,7 @@ struct FilledButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration
             .label
+            .font(Theme.fonts.body)
             .padding(.horizontal, 20)
             .padding(.vertical, 10)
             .foregroundStyle(.white)

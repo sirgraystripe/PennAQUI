@@ -34,6 +34,7 @@
 		D7AA54C82BF954B500ABB99C /* EnvironmentValues+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54BF2BF954B500ABB99C /* EnvironmentValues+Extensions.swift */; };
 		D7AA54CA2BF955A400ABB99C /* KeysConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D7AA54C92BF955A100ABB99C /* KeysConfig.xcconfig */; };
 		D7AA54CE2BF9565B00ABB99C /* FeedDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA54CD2BF9565B00ABB99C /* FeedDTO.swift */; };
+		D7B85AFD2BFAD2360012C8DE /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B85AFC2BFAD2360012C8DE /* Onboarding.swift */; };
 		D7C019FF2BFA64B4007F1339 /* ActionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C019FE2BFA64B4007F1339 /* ActionMenu.swift */; };
 		D7C01A022BFA65B8007F1339 /* FilledButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C01A012BFA65B8007F1339 /* FilledButtonStyle.swift */; };
 		D7C01A042BFA9343007F1339 /* AddCitySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C01A032BFA9343007F1339 /* AddCitySheet.swift */; };
@@ -72,6 +73,7 @@
 		D7AA54BF2BF954B500ABB99C /* EnvironmentValues+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+Extensions.swift"; sourceTree = "<group>"; };
 		D7AA54C92BF955A100ABB99C /* KeysConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = KeysConfig.xcconfig; sourceTree = "<group>"; };
 		D7AA54CD2BF9565B00ABB99C /* FeedDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDTO.swift; sourceTree = "<group>"; };
+		D7B85AFC2BFAD2360012C8DE /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		D7C019FE2BFA64B4007F1339 /* ActionMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionMenu.swift; sourceTree = "<group>"; };
 		D7C01A012BFA65B8007F1339 /* FilledButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledButtonStyle.swift; sourceTree = "<group>"; };
 		D7C01A032BFA9343007F1339 /* AddCitySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCitySheet.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 		D7AA54B52BF954B500ABB99C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D7B85AFC2BFAD2360012C8DE /* Onboarding.swift */,
 				D7AA54B42BF954B500ABB99C /* InitialView.swift */,
 				D7C019FE2BFA64B4007F1339 /* ActionMenu.swift */,
 				D7C01A032BFA9343007F1339 /* AddCitySheet.swift */,
@@ -393,6 +396,7 @@
 				D709C8CB2BF9CAA9007993D0 /* LatLongCell.swift in Sources */,
 				D75C93792BF96E8D0036F4DC /* EmptyBacked.swift in Sources */,
 				D7C01A042BFA9343007F1339 /* AddCitySheet.swift in Sources */,
+				D7B85AFD2BFAD2360012C8DE /* Onboarding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +537,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PennAQUI/Info.plist;
+				INFOPLIST_KEY_NSLocationUsageDescription = "Read AQI from your current location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Read AQI from your current location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -564,6 +570,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PennAQUI/Info.plist;
+				INFOPLIST_KEY_NSLocationUsageDescription = "Read AQI from your current location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Read AQI from your current location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

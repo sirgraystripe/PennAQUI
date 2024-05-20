@@ -27,6 +27,11 @@ enum ThemeFonts {
             .bold()
     }
 
+    static var bigTitle: Font {
+        .custom(headerFontName, size: 40, relativeTo: .title)
+            .bold()
+    }
+
     static var title: Font {
         .custom(headerFontName, size: 20, relativeTo: .title)
             .bold()

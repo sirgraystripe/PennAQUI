@@ -14,7 +14,10 @@ struct PennAQUIApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
-                .environmentObject(store)
+                .environmentObject(Store.mocked)
+                .onDisappear {
+                    LocationManager.shared.stopMonitoringLocation()
+                }
         }
     }
 }

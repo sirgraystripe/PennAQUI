@@ -10,8 +10,8 @@ import SwiftUI
 struct ActionMenu: View {
     @EnvironmentObject private var store: Store
     @Environment(\.isEnabled) private var isEnabled
-    @State private var presentAddCitySheet = false
 
+    @State private var presentAddCitySheet = false
     @State private var feedCategory: FeedCategory = .user
 
     private var citiesAdded: Bool {
@@ -37,6 +37,11 @@ struct ActionMenu: View {
                 }
                 .pickerStyle(.palette)
             }
+            #if DEBUG
+                Button("Reset Onboarding") {
+                    store.presentOnboarding = true
+                }
+            #endif
         }
         .onChange(of: feedCategory) { _, feedCategory in
             store.setActiveFeed(feedCategory)
