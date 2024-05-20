@@ -21,16 +21,16 @@ struct AQIRow: View {
             HStack {
                 DetailCell(
                     title: "Tomorrow",
-                    systemImage: "arrow.right.circle.fill"
+                    systemImage: "arrow.left.circle.fill"
                 ) {
-                    Text("\(store.activeFeed.forecast?.tomorrowPM25 ?? "")")
+                    Text("\(store.activeFeed.forecast?.yesterdayPM25 ?? 0)")
                         .font(Theme.fonts.body)
                 }
                 DetailCell(
                     title: "Day After",
-                    systemImage: "arrow.right.to.line.circle.fill"
+                    systemImage: "arrow.right.circle.fill"
                 ) {
-                    Text("\(store.activeFeed.forecast?.dayAfterPM25 ?? "")")
+                    Text("\(store.activeFeed.forecast?.tomorrowPM25 ?? 0)")
                         .font(Theme.fonts.body)
                 }
             }

@@ -56,12 +56,19 @@ struct TimeDTO: Codable {
 }
 
 struct ForecastDTO: Codable {
-    var daily: [DailyForecastDTO]?
+    var daily: DailyForecastDTO?
 }
 
-struct DailyForecastDTO: Codable  {
-    var pm25: String?
-    var pm10: String?
-    var o3: String?
-    var uvi: String?
+struct DailyForecastDTO: Codable {
+    var pm25: [ForecastElementDTO]?
+    var pm10: [ForecastElementDTO]?
+    var o3: [ForecastElementDTO]?
+    var uvi: [ForecastElementDTO]?
+}
+
+struct ForecastElementDTO: Codable {
+    var avg: Int?
+    var day: String?
+    var max: Int?
+    var min: Int?
 }

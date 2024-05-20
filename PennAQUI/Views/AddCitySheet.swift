@@ -29,7 +29,7 @@ struct AddCitySheet: View {
                         dismiss()
                     }
                 }
-                .butonStyle(.filled(color: .black))
+                .buttonStyle(.filled(color: .black))
                 .disabled(feedResult == nil)
             }
             // Title size is a little finicky

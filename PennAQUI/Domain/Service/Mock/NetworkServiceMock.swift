@@ -30,8 +30,8 @@ struct NetworkServiceMock: NetworkService {
                 ),
                 feedCategory: .city,
                 forecast: ForecastData(
-                    tomorrowPM25: "123",
-                    dayAfterPM25: "456"
+                    yesterdayPM25: 199,
+                    tomorrowPM25: 12
                 )
             )
         )
@@ -55,8 +55,8 @@ struct NetworkServiceMock: NetworkService {
                 ),
                 feedCategory: .user,
                 forecast: ForecastData(
-                    tomorrowPM25: "500",
-                    dayAfterPM25: "222"
+                    yesterdayPM25: 129,
+                    tomorrowPM25: 222
                 )
             )
         )
